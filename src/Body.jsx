@@ -60,7 +60,7 @@ function Body() {
           {setpoint > MIN && (
             <path
               d={describeArc(CX, CY, radius, startAngle, arcAngle)}
-              stroke="#38bdf8"
+              stroke="#FFFFFF"
               strokeWidth={stroke}
               fill="none"
               strokeLinecap="round"
@@ -70,12 +70,12 @@ function Body() {
 
         {/* Center label perfectly (no negative margins, no translates) */}
         <div className="absolute inset-0 grid place-items-center pointer-events-none">
-          <div className="text-[64px] leading-none font-light text-zinc-100 font-mono">
+          <div className="text-[64px] leading-none font-light text-zinc-700 font-mono">
             {setpoint}
          </div>
 
-          <div className="mt-1 text-xs text-zinc-500 uppercase tracking-widest">
-            Progress
+          <div className="mt-1 text-xs text-zinc-700 uppercase tracking-widest">
+            Fan Speed
           </div>
         </div>
       </div>
@@ -83,13 +83,13 @@ function Body() {
       {/* Controls centered under the dial */}
       <div className="mt-10 flex items-center justify-center gap-8">
         <button
-          onClick={() => change(-1)}
+          onClick={() => change(-25)}
           className="h-12 w-12 rounded-full border border-zinc-600 bg-zinc-700 text-zinc-100"
         >
           −
         </button>
         <button
-          onClick={() => change(1)}
+          onClick={() => change(25)}
           className="h-12 w-12 rounded-full border border-zinc-600 bg-zinc-700 text-zinc-100"
         >
           +
